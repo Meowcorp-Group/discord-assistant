@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		port: 5177,
 		allowedHosts: [
-			'assistant-dev.meowcorp.net'
+			'assistant-activity-dev.meowcorp.net'
 		]
 	}
 });
