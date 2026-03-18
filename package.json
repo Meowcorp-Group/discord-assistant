@@ -7,6 +7,7 @@
 	"scripts": {
 		"activity:dev": "bun run --env-file=.env --filter activity dev",
 		"bot:dev": "bun run --env-file=.env --filter bot dev",
+		"bot:cmd": "bun run --env-file=.env --filter bot cmd",
 		"dev": "bun run --env-file=.env --parallel --workspaces dev"
 	},
 	"workspaces": [
