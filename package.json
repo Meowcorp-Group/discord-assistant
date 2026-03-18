@@ -5,9 +5,9 @@
 	"license": "BSD-3-Clause",
 	"private": true,
 	"scripts": {
-		"activity:dev": "bun run --filter activity dev",
-		"bot:dev": "bun run --filter bot dev",
-		"dev": "bun run --parallel --workspaces dev"
+		"activity:dev": "bun run --env-file=.env --filter activity dev",
+		"bot:dev": "bun run --env-file=.env --filter bot dev",
+		"dev": "bun run --env-file=.env --parallel --workspaces dev"
 	},
 	"workspaces": [
 		"activity",
