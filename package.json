@@ -1,0 +1,16 @@
+{
+	"name": "meowcorp-assistant",
+	"version": "1.0.0",
+	"author": "Meowcorp",
+	"license": "BSD-3-Clause",
+	"private": true,
+	"scripts": {
+		"activity:dev": "bun run --filter activity dev",
+		"bot:dev": "bun run --filter bot dev",
+		"dev": "bun run --parallel --workspaces dev"
+	},
+	"workspaces": [
+		"activity",
+		"bot"
+	]
+}
