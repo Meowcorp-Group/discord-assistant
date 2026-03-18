@@ -5,6 +5,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
 	server: {
-		port: 5177
+		port: 5177,
+		allowedHosts: [
+			'assistant-dev.meowcorp.net'
+		]
 	}
 });
