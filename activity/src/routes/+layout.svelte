@@ -7,42 +7,44 @@
 
 	let { children } = $props();
 
-	onMount(async () => {
-		console.log('Mounting layout...');
-		// await initializeDiscordSdk();
-		const discordSdk = new DiscordSDK(PUBLIC_DISCORD_CLIENT_ID);
-		await discordSdk.ready();
+	// onMount(async () => {
+	// 	console.log('Mounting layout...');
+	// 	// await initializeDiscordSdk();
+	// 	const discordSdk = new DiscordSDK(PUBLIC_DISCORD_CLIENT_ID);
+	// 	await discordSdk.ready();
 
-		console.log('Discord SDK initialized:', discordSdk);
+	// 	console.log('Discord SDK initialized:', discordSdk);
 
-		const { code } = await discordSdk.commands.authorize({
-			client_id: PUBLIC_DISCORD_CLIENT_ID,
-			response_type: 'code',
-			state: '',
-			prompt: 'none',
-			scope: [
-				'identify',
-				'guilds'
-			]
-		})
+	// 	const { code } = await discordSdk.commands.authorize({
+	// 		client_id: PUBLIC_DISCORD_CLIENT_ID,
+	// 		response_type: 'code',
+	// 		state: '',
+	// 		prompt: 'none',
+	// 		scope: [
+	// 			'identify',
+	// 			'guilds'
+	// 		]
+	// 	})
 
-		const response = await fetch('/api/token', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ code })
-		})
-		const data = await response.json();
-		const auth = await discordSdk.commands.authenticate({
-			access_token: data.access_token
-		})
+	// 	const response = await fetch('/api/token', {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json'
+	// 		},
+	// 		body: JSON.stringify({ code })
+	// 	})
+	// 	const data = await response.json();
+	// 	const auth = await discordSdk.commands.authenticate({
+	// 		access_token: data.access_token
+	// 	})
 
-		if (!auth) throw new Error('Failed to authenticate with Discord');
+	// 	if (!auth) throw new Error('Failed to authenticate with Discord');
 
-		console.log('Authenticated with Discord:', auth);
-	})
+	// 	console.log('Authenticated with Discord:', auth);
+	// })
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+<main class="p-4 flex">
+	{@render children()}
+</main>
