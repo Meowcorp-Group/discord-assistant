@@ -45,6 +45,7 @@
 	},
 	"dependencies": {
 		"@discord/embedded-app-sdk": "^2.4.0",
-		"daisyui": "^5.5.19"
+		"daisyui": "^5.5.19",
+		"temporal-polyfill": "^0.3.2"
 	}
 }
