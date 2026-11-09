@@ -1,7 +1,7 @@
 BUILD_DIR = build
 BUILD_TYPE = Debug
 
-.PHONY: all configure build clean
+.PHONY: all configure build clean run
 
 all: build
 
@@ -15,3 +15,6 @@ clean:
 	rm -r $(BUILD_DIR)
 	rm -f src/assistant_cpp*.so
 	rm -f src/assistant_cpp.pyi
+
+run:
+	python3 src/main.py
