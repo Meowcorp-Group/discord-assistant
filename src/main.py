@@ -24,7 +24,7 @@ class BotClient(discord.Client):
 					result = assistant_cpp.evaluate_expression(expression)
 					embed = discord.Embed(
 						title='Qalculate!',
-						color=discord.Color.red()
+						color=discord.Color.pink()
 					)
 					embed.add_field(name='Input interpretation', value=discord.utils.escape_markdown(result.input), inline=False)
 					embed.add_field(name='Result', value=discord.utils.escape_markdown(result.result), inline=False)
